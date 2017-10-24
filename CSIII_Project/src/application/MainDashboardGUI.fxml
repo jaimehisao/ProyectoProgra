@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="615.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainDashboardController">
+   <children>
+      <Label layoutX="780.0" layoutY="8.0" prefHeight="73.0" prefWidth="256.0" text="Dashboard">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <JFXHamburger fx:id="hamburgerMain" layoutX="24.0" layoutY="24.0" />
+      <MenuBar fx:id="menuBar" layoutY="-32.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem fx:id="newUserSetup" mnemonicParsing="false" onAction="#addNewUserPressed" text="Agregar Nuevo Usuario" />
+                  <MenuItem fx:id="logOut" mnemonicParsing="false" onAction="#logOutPressed" text="Unspecified Action" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Window">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="650.0" layoutY="95.0" text="Mis Finanzas:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="myAsssetsLabel" layoutX="822.0" layoutY="94.0" text="\$$$$$$$$$">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="todoTable" layoutX="63.0" layoutY="97.0" prefHeight="218.0" prefWidth="476.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+      <TableView fx:id="pendingOrdersTable" layoutX="57.0" layoutY="362.0" prefHeight="164.0" prefWidth="483.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+         </columns>
+      </TableView>
+      <Label layoutX="81.0" layoutY="330.0" text="Mi Negocio - Pedidos Pendendientes">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="64.0" text="Mis Pendientes">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TableView fx:id="lastTransactionsTable" layoutX="585.0" layoutY="185.0" prefHeight="350.0" prefWidth="415.0">
+         <columns>
+            <TableColumn prefWidth="75.0" text="C1" />
+            <TableColumn prefWidth="75.0" text="C2" />
+         </columns>
+      </TableView>
+      <Label layoutX="649.0" layoutY="150.0" text="Mis Ultimas Transacciones">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <JFXDrawer fx:id="drawer" layoutY="45.0" prefHeight="521.0" prefWidth="153.0" />
+   </children>
+</AnchorPane>

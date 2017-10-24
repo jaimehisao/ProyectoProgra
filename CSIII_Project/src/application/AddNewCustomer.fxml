@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="227.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddNewCustomerController">
+   <children>
+      <Label layoutX="6.0" layoutY="6.0" text="Agregar Nuevo Cliente">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameTextField" layoutX="19.0" layoutY="41.0" prefHeight="27.0" prefWidth="430.0" promptText="Nombre(s)" />
+      <TextField fx:id="lastNameTextField" layoutX="19.0" layoutY="75.0" prefHeight="27.0" prefWidth="430.0" promptText="Apellido(s)" />
+      <TextField fx:id="addressTextField" layoutX="19.0" layoutY="109.0" prefHeight="27.0" prefWidth="430.0" promptText="Direccion" />
+      <TextField fx:id="phoneTextField" layoutX="19.0" layoutY="143.0" prefHeight="27.0" prefWidth="430.0" promptText="Numero de Telefono" />
+      <Button fx:id="saveButton" layoutX="376.0" layoutY="185.0" mnemonicParsing="false" onAction="#savePressed" text="Guardar" />
+      <Button fx:id="emptyButton" layoutX="304.0" layoutY="186.0" mnemonicParsing="false" onAction="#emptyPressed" text="Vaciar" />
+   </children>
+</AnchorPane>

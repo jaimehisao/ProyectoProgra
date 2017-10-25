@@ -232,11 +232,12 @@ public class MyBusinessController implements Initializable {
 		telefonoCol.setOnEditCommit(new EventHandler<CellEditEvent<Client, String>>() {
 			public void handle(CellEditEvent<Client, String> t) {
 				((Client) t.getTableView().getItems().get(t.getTablePosition().getRow()))
-						.setPhoneNumber(t.getNewValue());
+				 		.setPhoneNumber(t.getNewValue());
 				ConcurrentProcesses.wasModifiedMyBusiness();
-				rowsModified.add(t.getTableView().getItems().get(t.getTablePosition().getRow()).codigoProperty().get());
+		  		rowsModified.add(t.getTableView().getItems().get(t.getTablePosition().getRow()).codigoProperty().get());
 			}
 		});
+		
 
 		direccionCol = new TableColumn<Client, String>("Direccion");
 		direccionCol.setCellValueFactory(new PropertyValueFactory<Client, String>("address"));

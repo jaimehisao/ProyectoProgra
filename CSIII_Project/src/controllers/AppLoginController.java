@@ -127,7 +127,7 @@ public class AppLoginController implements Initializable {
 
 	}
 
-	private void logIn() throws IOException  {
+	private void logIn() throws IOException {
 		String user = usernameField.getText();
 		String password = passwordField.getText();
 
@@ -140,11 +140,6 @@ public class AppLoginController implements Initializable {
 					+ "\" AND pass = \"" + password + "\";");
 
 			if (isValid == true) {
-				// Alert alert = new Alert(AlertType.INFORMATION);
-				// alert.setTitle("Operacion Exitosa");
-				// alert.setHeaderText(null);
-				// alert.setContentText("Bienvenido!!");
-				// alert.showAndWait();
 				isValidated = true;
 				Parent mainDashboard = FXMLLoader.load(getClass().getResource("/application/MainDashboardGUI.fxml"));
 				Scene dashboardScene = new Scene(mainDashboard);
@@ -159,7 +154,11 @@ public class AppLoginController implements Initializable {
 				alert.showAndWait();
 				passwordField.setText("");
 				usernameField.setText("");
+				return;
+
 			}
+			return;
+
 		} else if (isOnline == false) { // If there is no Internet connection
 			// password = PasswordHandling.cryptWithMD5(password);
 			Alert alert = new Alert(AlertType.WARNING);
@@ -167,8 +166,9 @@ public class AppLoginController implements Initializable {
 			alert.setHeaderText(null);
 			alert.setContentText("Conectate al Internet y vuelve a intentar, esta funcion aún no esta disponible");
 			alert.showAndWait();
+			return;
 		}
-
+		return;
 	}
 
 	/*
@@ -196,5 +196,4 @@ public class AppLoginController implements Initializable {
 			return false;
 		}
 	}
-
 }

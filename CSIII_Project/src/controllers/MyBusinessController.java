@@ -42,9 +42,6 @@ public class MyBusinessController implements Initializable {
 	/**
 	 * The ObservableList in charge of holding the objects that were in the
 	 * ArrayList named "clientList".
-	 * 
-	 * @name JHYH
-	 * 
 	 */
 	static ObservableList<Client> clientData;
 
@@ -232,12 +229,11 @@ public class MyBusinessController implements Initializable {
 		telefonoCol.setOnEditCommit(new EventHandler<CellEditEvent<Client, String>>() {
 			public void handle(CellEditEvent<Client, String> t) {
 				((Client) t.getTableView().getItems().get(t.getTablePosition().getRow()))
-				 		.setPhoneNumber(t.getNewValue());
+						.setPhoneNumber(t.getNewValue());
 				ConcurrentProcesses.wasModifiedMyBusiness();
-		  		rowsModified.add(t.getTableView().getItems().get(t.getTablePosition().getRow()).codigoProperty().get());
+				rowsModified.add(t.getTableView().getItems().get(t.getTablePosition().getRow()).codigoProperty().get());
 			}
 		});
-		
 
 		direccionCol = new TableColumn<Client, String>("Direccion");
 		direccionCol.setCellValueFactory(new PropertyValueFactory<Client, String>("address"));
@@ -420,6 +416,19 @@ public class MyBusinessController implements Initializable {
 		clientList.add(e);
 	}
 
+	public static void addToObservableList(Client newClient) {
+		clientData.add(newClient);
+
+	}
+
+	public static boolean isWasModified() {
+		return wasModified;
+	}
+
+	public static void setWasModified(boolean wasModified2) {
+		wasModified = wasModified2;
+	}
+
 	/*
 	 * *****************************************************************************
 	 * 
@@ -472,6 +481,13 @@ public class MyBusinessController implements Initializable {
 			this.code = new SimpleIntegerProperty(id);
 		}
 
+		/*
+		 * *****************************************************************************
+		 * 
+		 * GETTERS AND SETTERS
+		 * 
+		 *******************************************************************************/
+
 		public void setPhoneNumber(String newValue) {
 			this.phoneNumber = new SimpleStringProperty(newValue);
 
@@ -521,19 +537,6 @@ public class MyBusinessController implements Initializable {
 		public SimpleIntegerProperty codigoProperty() {
 			return code;
 		}
-	}
-
-	public static void addToObservableList(Client newClient) {
-		clientData.add(newClient);
-
-	}
-
-	public static boolean isWasModified() {
-		return wasModified;
-	}
-
-	public static void setWasModified(boolean wasModified2) {
-		wasModified = wasModified2;
 	}
 
 }
